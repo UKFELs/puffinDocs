@@ -12,9 +12,9 @@ The above approximations are usually perfectly valid, but there are some regimes
 
 Due to the nature of the code, and the likely use cases for such a code, we have attempted to create a resource which is a flexible tool for numerical scientific research, while still containing enough 'realistic'  components to enable reasonable modelling of a current or future facility.
 
-## Code Description
+## Code Language
 
-Puffin is written in modern Fortran, using MPI and OpenMP.
+Puffin is written in modern Fortran, using MPI and OpenMP. It scales well up to many thousands of cores, but smaller runs, in 1D or periodic mode, can usually be run locally.
 
 ## How to Install
 
@@ -22,11 +22,9 @@ The source code is hosted here, along with binaries for Ubuntu 16.04 in the rele
 
 To build from source, Puffin uses CMake and SciMake to detect the relevant packages on your machine and generate a Makefile.
 
-See here for more info.
-
 ## How to Run
 
-Once installed, Puffin must be invoked with MPI, passing it the main input file (see section ), here called main.in
+Once installed, Puffin must be invoked with MPI, passing it the main input file (see section ), here called main.in:
 
 `mpirun -np 2 puffin main.in`
 
