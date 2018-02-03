@@ -14,11 +14,11 @@ Due to the nature of the code, and the likely use cases for such a code, we have
 
 ## Code Language
 
-Puffin is written in modern Fortran, using MPI and OpenMP. It scales well up to many thousands of cores, but smaller runs, in 1D or periodic mode, can usually be run locally.
+Puffin is written in modern Fortran, using MPI and OpenMP. It scales well up to many thousands of cores on large clusters, but smaller runs, in 1D or periodic mode, can usually be run locally.
 
 ## How to Install
 
-The source code is hosted here, along with binaries for Ubuntu 16.04 in the releases section.
+The source code is hosted [here](https://github.com/UKFELs/Puffin), along with binaries for Ubuntu 16.04 in the releases section.
 
 To build from source, Puffin uses CMake and SciMake to detect the relevant packages on your machine and generate a Makefile.
 
