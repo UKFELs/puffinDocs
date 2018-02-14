@@ -18,7 +18,7 @@ To build Puffin you will need parallel hdf5 and fftw3 libs already installed. If
     git clone git@github.com:UKFELs/Puffin.git /path/to/Puffin
     ```
 
-where `/path/to/Puffin` is where you want the top level of the Puffin source to be downloaded to.
+    where `/path/to/Puffin` is where you want the top level of the Puffin source to be downloaded to.
 
 2. Make a new dir for the build:
 
