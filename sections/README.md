@@ -37,6 +37,7 @@ This documentation consists of the following sections:
 
 - [How to Install](BUILD.md)
 - [How to run](howtorun.md)
+- [Code Overview](overview.md)
 
 There is also a [pdf manual on the Github repo](https://github.com/UKFELs/Puffin/blob/master/doc/manual.pdf).
 
