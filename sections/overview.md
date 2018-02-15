@@ -6,7 +6,7 @@ Welcome to the documentation for Puffin! Puffin (Parallel Unaveraged Fel INtegra
 
 A Free Electron Laser (FEL) is a device in which an ultra-fast electron beam, travelling close to the speed of light, is made to wiggle from side to side by passing it through a magnetic device known as an undulator, which enables it to amplify a co-propagating radiation field by many orders of magnitude. The FEL is the world's premier source of coherent X-Rays, with national facilites in the U.S., Germany, Japan, Switzerland, China and more fully booked by a wide range of physicists, biologists, and chemists trying to understand matter on the ultra-fast, ultra-small scale.
 
-The 'usual' way of doing FEL theory and numerical codes involves a number of approximations, including:
+The usual way of doing FEL theory and numerical codes involves a number of approximations, including:
 
   - Averaging out the fast wiggle motion of the electrons
   - Assuming the radiation field varies slowly over one radiation wavelength (Slowly Varying Envelope Approximation, or SVEA)
