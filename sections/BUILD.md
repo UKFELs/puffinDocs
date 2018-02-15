@@ -100,19 +100,19 @@ and then you are ready to build Puffin as above. Note that you should link to th
 
   - If you are using a system with mutiple compilers (e.g. HPC systems usually have a variety of Fortran and C compilers to choose), then it is usually a good idea to make sure environment variables are set up to tell SciMake and Bilder which ones to use. These can be explicitly set using CC, F90, etc. So for example, the following example specifies the intel compilers and paths to the OpenMPI wrappers on that system:
     
-```
+    ```
     export CC=icc; export CXX=icpc; export F90=ifort; export F77=ifort; export FC=ifort
 
     export MPICC="/opt/intel-openmpi/1.8.1/bin/mpicc"; export MPICXX="/opt/intel-openmpi/1.8.1/bin/mpicxx"; export MPIFC="/opt/intel-openmpi/1.8.1/bin/mpif90"; export MPIF77="/opt/intel-openmpi/1.8.1/bin/mpif77"
-```
+    ```
   
   - The most recent versions of HDF5 built by bilder have 2 module files installed to a different directory than expected. They are built, however, in the hdf5 sub-directory of the `build` sub-directory specified in the `./mkvisitall.sh` command above, and just need copied over to the correct place. Do
 
-```    
+    ```    
     cp /path/to/build/hdf5-1.8.13/par/bin/h5f_provisional.mod /path/to/contrib/hdf5-par/include/
 
     cp /path/to/build/hdf5-1.8.13/par/bin/h5fdmpio.mod /path/to/contrib/hdf5-par/include/
-```
+    ```
 
     Replace the version number in the above with that from your own install, which may be more recent.
 
@@ -121,22 +121,22 @@ and then you are ready to build Puffin as above. Note that you should link to th
 
     An issue with building with Bilder on Ubuntu is that Bilder does not currently recognise the machine hostname on Ubuntu. This may cause problems with the install process. We recommend doing
 
-```
+    ```
     export FQHOSTNAME=$HOSTNAME
-```
+    ```
 
     to make Bilder recognise the machine hostname.
 
     Another issue is with the OpenMPI/Fortran compilers compatibility with Bilder. The HDF5 libs built by Bilder do not work with the particular configuration on Ubuntu 16.04. So we recommend using the HDF5 libs supplied in the Ubuntu repositories. They are called `libhdf5-openmpi-dev` - e.g. do `sudo apt-get install libhdf5-openmpi-dev` to install them. For some reason the headers aren't automatically added to your path, so you need to do 
 
-```
+    ```
     export PATH=/usr/include/hdf5/openmpi:$PATH
-```
+    ```
 
     Then the CMake command to configure the Puffin Makefile becomes:
 
-```
+    ```
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_COLOR_MAKEFILE:BOOL=TRUE -DCMAKE_VERBOSE_MAKEFILE:BOOL=TRUE -DENABLE_PARALLEL:BOOL=ON -DDEBUG_CMAKE:BOOL=TRUE -DFftw3_ROOT_DIR='/path/to/fftw3-par' -DHdf5_ROOT_DIR='/usr' -DHdf5_MODULE_DIRS='/usr/include/hdf5/openmpi' -DHdf5_LIBRARY_DIRS='/usr/lib/x86_64-linux-gnu/hdf5/openmpi;/usr/lib/x86_64-linux-gnu' -DHdf5_INCLUDE_DIRS='/usr/include/hdf5/openmpi' -DHdf5_LIBRARY_NAMES='hdf5_openmpi_fortran;hdf5_openmpi' -DHdf5_LIBRARIES='/usr/lib/x86_64-linux-gnu/libhdf5_openmpi_fortran.so;/usr/lib/x86_64-linux-gnu/libhdf5_openmpi.so' -DHdf5_STLIBS='/usr/lib/x86_64-linux-gnu/libhdf5_openmpi_fortran.a;/usr/lib/x86_64-linux-gnu/libhdf5_openmpi.a' /path/to/Puffin
-```
+    ```
 
 
