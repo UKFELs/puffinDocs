@@ -10,6 +10,7 @@ Puffin can be run in 1D or 3D mode. It is important to note that the approximati
 
 ## Temporal and Periodic Meshes
 
+![Alt Text](pics/mpi_mesh4.png "Equivalent 2D representation of MPI memory distribution.")
 
 ## Undulator Fields
 
