@@ -139,7 +139,7 @@ and for fftw3, do *e.g.*
 ./configure --prefix=/home/users/username/bin/fftw3/build MPICC=mpiicc --enable-mpi --enable-openmp
 ```
 
-will tell the configure routine to use the `mpiicc` MPI C compiler.
+will tell the configure routines to use the specified compilers.
 
 
 ### Building hdf5 and fftw3 (and more) using Bilder
