@@ -120,7 +120,7 @@ export CC=mpicc
 export MPI_CXX=mpicxx
 ```
 
-Sometimes the parallel C compiler is `mpiicc` rather than `mpicc`, and the parallel Fortran compiler is `mpiifort` - please check this yourself. Sometimes you may need to give the full path to the compiler, depending on how well your system is setup! *e.g.* you may need:
+Sometimes the parallel C compiler is `mpiicc` rather than `mpicc`, and the parallel Fortran compiler is `mpiifort` - please check this yourself. Sometimes you may need to give the full path to the compiler, depending on how your system is setup! *e.g.* you may need:
 
 ```
 export CC=/path/to/mpiicc
