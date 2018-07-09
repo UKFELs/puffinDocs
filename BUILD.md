@@ -6,7 +6,7 @@ The source code is hosted [here](https://github.com/UKFELs/Puffin), along with b
 
 Puffin is written in modern fortran, and the post-processing scripts are in Python, using pytables and numpy. Puffin can be built using CMake, and uses SciMake (bundled with Puffin) to find and link the external libraries.
 
-The below guide is for use on linux using the bash terminal. Installation on native Windows or OS X is not currently supported. (Installation on OS X with MacPorts using the below general instructions has been achieved, however, and similarly with Cygwin on Windows 7.)
+The below guide is for use on linux using the bash terminal. Installation on native Windows or OS X is not currently supported. (Installation on OS X with MacPorts using the below general instructions has been achieved, however, and similarly with Cygwin on Windows 7. The Ubuntu instructions below have been successfully run on Ubuntu for Windows on Windows 10)
 
 ### General Instructions
 
@@ -29,10 +29,20 @@ To build Puffin you will need parallel hdf5 and fftw3 libs already installed. If
 3. Run cmake, e.g.
 
     ```
-    cmake -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DFftw3_ROOT_DIR='/path/to/fftw3' -DHdf5_ROOT_DIR='/path/to/hdf5' /path/to/Puffin
+    cmake -DENABLE_PARALLEL:BOOL=TRUE -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DFftw3_ROOT_DIR='/path/to/built/fftw3' -DHdf5_ROOT_DIR='/path/to/built/hdf5' /path/to/Puffin
     ```
 
 4. Do `make && make install`. You should get a puffin binary in /path/to/puffin-install
+
+#### Common issues
+
+Sometimes CMake/SciMake does not pick up the environment variables which set which compilers to use. These can be explicitly set by doing:
+
+```
+cmake -DMPI_C_COMPILER=$MPICC -DMPI_CXX_COMPILER=$MPICXX -DMPI_FORTRAN_COMPILER=$MPIFC -DENABLE_PARALLEL:BOOL=TRUE -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DFftw3_ROOT_DIR='/path/to/fftw3' -DHdf5_ROOT_DIR='/path/to/hdf5' /path/to/Puffin
+```
+where `$MPICC` *etc* should be pointing to your MPI C/Fortran compilers.
+
 
 ### Building on Ubuntu 16.04
 
@@ -69,9 +79,72 @@ make install
 
 You'll find the Puffin executable in the subdirectory `bin` in the directory you told CMake to install Puffin to (i.e. after the above cmake command the location would be `path/to/desired/puffin/install/bin`).
 
+## Building HDF5 and FFTW3
+
+### Building hdf5 and fftw3 manually
+
+In the simplest form, hdf5 can be built by first downloading and unzipping the source from e.g. [here](https://www.hdfgroup.org/downloads/hdf5/source-code/). Then, going into the unzipped hdf5 source directory, one can do:
+
+```
+./configure --enable-parallel --enable-fortran --prefix=/home/users/username/bin/hdf5/build
+make
+make install
+```
+
+where the destination specified by `prefix` is the destination the built libraries and header files will be installed to. 
+
+Similarly for fftw3, the libraries can be built after extracting the source and moving into the top-level source directory by doing 
+
+```
+./configure --prefix=/home/users/username/bin/fftw3/build --enable-mpi --enable-openmp
+make
+make install
+```
+
+where, again, the `prefix` specifies where the built library will be placed.
+
+Often, it is required to specify the compilers to be used by the packages. For example, it is common on HPC machines that there will be multiple compilers, which can be loaded into your working environment with use of a `module` command. If the following envirnment variables are not already configured by your system (*e.g.* after doing a `module load` to load the compilers on your HPC machine) (try `echo $MPICC` to print to screen to see if/how `MPICC` is specified), then specifying the environment variables by hand to point to the compilers is sometimes needed:
+
+```
+export CC=mpicc
+export CXX=mpicxx
+export F90=mpif90
+export F77=mpif90
+export F9X=mpif90
+export FC=mpif90
+export MPICC=mpicc
+export MPICXX=mpicxx
+export MPIF90=mpif90
+export CXX=mpicxx
+export CC=mpicc
+export MPI_CXX=mpicxx
+```
+
+Sometimes the parallel C compiler is `mpiicc` rather than `mpicc`, and the parallel Fortran compiler is `mpiifort` - please check this yourself. Sometimes you may need to give the full path to the compiler, depending on how well your system is setup! *e.g.* you may need:
+
+```
+export CC=/path/to/mpiicc
+```
+*etc.*
+
+Environment variables can also be specified in the `configure` call in each case. So, for hdf5, do:
+
+```
+CC=/path/to/mpicc FC=/path/to/mpif90 F90=/path/to/mpif90 F77=/path/to/mpif90 ./configure --enable-parallel --enable-fortran --prefix=/home/users/username/bin/hdf5/build
+```
+
+and for fftw3, do *e.g.*
+
+```
+./configure --prefix=/home/users/username/bin/fftw3/build MPICC=mpiicc --enable-mpi --enable-openmp
+```
+
+will tell the configure routine to use the `mpiicc` MPI C compiler.
+
+
 ### Building hdf5 and fftw3 (and more) using Bilder
 
-Hdf5 and fftw3 parallel libraries may be cumbersome to build individually. The most popular linux distros have them in the official repositories. They can also be obtained and built by using bilder, which provides a stable base for building Puffin. This is usually what is used for Puffin running and development on HPC clusters. Bilder also allows one to build other packages needed for building and post-processing, like CMake and Python packages, and so on. In the below, we build fftw3, hdf5, and numpy and tables for Python.
+Hdf5 and fftw3 parallel libraries may be cumbersome to build individually. The most popular linux distros have them in the official repositories. They can also be obtained and built by using Bilder, which provides a stable base for building Puffin. This is usually what is used for Puffin running and development on HPC clusters. Bilder also allows one to build other packages needed for building and post-processing, like CMake and Python packages, and so on. In the below, we build fftw3, hdf5, and numpy and tables for Python.
 
 First, check out bilder from the repository.
 
