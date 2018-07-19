@@ -53,7 +53,7 @@ To build Puffin you will need parallel hdf5 and fftw3 libs already installed. If
     
 2. Depending on your setup, the OpenMP flags may be picked up by SciMake and added to the compile flags, but not the link flags. When `make`ing, this results in successful individual compilation of modules, but it will fail at the link stage complaining about not being able to recognise OpenMP commands (which will have the form \*omp\* *e.g.* the name of one is omp_get_num_threads). To fix this, you need to modify the file `/where/you/ran/cmake/source/CMakeFiles/puffin.dir/link.txt`, and add the OpenMP flag for your compiler, usually `-fopenmp` for gfortran, next to the `-O3` flag. Then do `make` again (then `make install`).
 
-3. If you have built hdf5 yourself (see below), then you may find that everything compiles and links, but when you run it says that it can't find the shared hdf5 libraries, usually called something like `libhdf5_fortran.so.10`. You'll need to add the built hdf5 libs to your LD_LIBRARY_PATH (which should be located in the `lib` subdirectory of the top-level of the built hdf5). So do 
+3. If you have built hdf5 yourself (see section on building hdf5 and fftw below), then you may find that everything compiles and links, but when you run it says that it can't find the shared hdf5 libraries, usually called something like `libhdf5_fortran.so.10`. You'll need to add the built hdf5 libs to your LD_LIBRARY_PATH (which should be located in the `lib` subdirectory of the top-level of the built hdf5). So do 
     ```
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/shared/hdf5/lib/directory/
     ```
