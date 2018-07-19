@@ -31,17 +31,33 @@ To build Puffin you will need parallel hdf5 and fftw3 libs already installed. If
     ```
     cmake -DENABLE_PARALLEL:BOOL=TRUE -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DFftw3_ROOT_DIR='/path/to/built/fftw3' -DHdf5_ROOT_DIR='/path/to/built/hdf5' /path/to/Puffin
     ```
+    
+    To specify compilers, you can pass them as environment varables in the above command *e.g.*
 
+    ```
+    env MPI_CXX=mpicxx CC=mpicc CXX=mpicxx F90=mpif90 F77=mpif90 FC=mpif90 cmake -DENABLE_PARALLEL:BOOL=TRUE -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DFftw3_ROOT_DIR='/path/to/built/fftw3' -DHdf5_ROOT_DIR='/path/to/built/hdf5' /path/to/Puffin
+    ```
+    
+    See the *Common Issues* section below to see an alternative (possibly better) way of specifying them.
+    
 4. Do `make && make install`. You should get a puffin binary in /path/to/puffin-install
 
 #### Common issues
 
-Sometimes CMake/SciMake does not pick up the environment variables which set which compilers to use. These can be explicitly set by doing:
+1. Sometimes CMake/SciMake does not pick up the environment variables which set which compilers to use. These can be explicitly set by doing:
 
-```
-cmake -DMPI_C_COMPILER=$MPICC -DMPI_CXX_COMPILER=$MPICXX -DMPI_FORTRAN_COMPILER=$MPIFC -DENABLE_PARALLEL:BOOL=TRUE -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DFftw3_ROOT_DIR='/path/to/fftw3' -DHdf5_ROOT_DIR='/path/to/hdf5' /path/to/Puffin
-```
-where `$MPICC` *etc* should be pointing to your MPI C/Fortran compilers.
+    ```
+    cmake -DMPI_C_COMPILER=$MPICC -DMPI_CXX_COMPILER=$MPICXX -DMPI_FORTRAN_COMPILER=$MPIFC -DENABLE_PARALLEL:BOOL=TRUE -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DFftw3_ROOT_DIR='/path/to/fftw3' -DHdf5_ROOT_DIR='/path/to/hdf5' /path/to/Puffin
+    ```
+    where `$MPICC` *etc* should be pointing to your MPI C/Fortran compilers.
+    
+2. Depending on your setup, the OpenMP flags may be picked up by SciMake and added to the compile flags, but not the link flags. When `make`ing, this results in successful individual compilation of modules, but it will fail at the link stage complaining about not being able to recognise OpenMP commands (which will have the form \*omp\* *e.g.* the name of one is omp_get_num_threads). To fix this, you need to modify the file `/where/you/ran/cmake/source/CMakeFiles/puffin.dir/link.txt`, and add the OpenMP flag for your compiler, usually `-fopenmp` for gfortran, next to the `-O3` flag. Then do `make` again (then `make install`).
+
+3. If you have built hdf5 yourself (see below), then you may find that everything compiles and links, but when you run it says that it can't find the shared hdf5 libraries, usually called something like `libhdf5_fortran.so.10`. You'll need to add the built hdf5 libs to your LD_LIBRARY_PATH (which should be located in the `lib` subdirectory of the top-level of the built hdf5). So do 
+    ```
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/shared/hdf5/lib/directory/
+    ```
+
 
 
 ### Building on Ubuntu 16.04
