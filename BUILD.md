@@ -232,7 +232,7 @@ and then you are ready to build Puffin as above. Note that you should link to th
 
 Docker images are hosted [here](https://hub.docker.com/u/mightylorenzo/). There are currently 2 images being hosted - a 'full' container intended for development purposes, which has all tests built, along with the testing infrastructure (pFUnit) and developer and user documentation, etc. By default, it runs the unit tests in Puffin. The other, the 'user' container, is run like an executable, and is about half the size of the 'test' image, since it does not include the tests etc. By default, you pass it the number of processors you want to use, and the name of the input file in the current directory to run.
 
-## Puffin-test container
+### Puffin-test container
 
 Contains all tests and testing infrastructure, and builds all dev documentation. Can be built from the dev branch in Puffin.
 
@@ -248,7 +248,7 @@ sudo docker run -it -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/pu
 ```
 ...which will open a shell in the container interactively, mounting the current directory on the host to the /home/puffin_user/tmp/puffin-test directory in the container.
 
-## Puffin-user container
+### Puffin-user container
 
 More lightweight, no tests or documentation built, intended more as an executable. The dockerfile to build it is in the dev-user branch.
 
@@ -264,7 +264,7 @@ sudo docker run -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin
 which will run on 2 processes, and pass the file in the current directory 'clara.in' to Puffin.
 
 
-### Building the image from source:
+### Building the Puffin Docker image from source:
 
 Just do the standard Docker build command:
 
