@@ -1,6 +1,6 @@
 # How to Install
 
-The source code is hosted [here](https://github.com/UKFELs/Puffin), along with binaries for Ubuntu 16.04 in the releases section.
+The source code is hosted [here](https://github.com/UKFELs/Puffin), along with binaries for Ubuntu 16.04 in the releases section. Containers are now also being hosted [here](https://hub.docker.com/u/mightylorenzo/).
 
 ## Building from source
 
@@ -228,4 +228,48 @@ and then you are ready to build Puffin as above. Note that you should link to th
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/path/to/puffin-install -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_COLOR_MAKEFILE:BOOL=TRUE -DCMAKE_VERBOSE_MAKEFILE:BOOL=TRUE -DENABLE_PARALLEL:BOOL=ON -DDEBUG_CMAKE:BOOL=TRUE -DFftw3_ROOT_DIR='/path/to/fftw3-par' -DHdf5_ROOT_DIR='/usr' -DHdf5_MODULE_DIRS='/usr/include/hdf5/openmpi' -DHdf5_LIBRARY_DIRS='/usr/lib/x86_64-linux-gnu/hdf5/openmpi;/usr/lib/x86_64-linux-gnu' -DHdf5_INCLUDE_DIRS='/usr/include/hdf5/openmpi' -DHdf5_LIBRARY_NAMES='hdf5_openmpi_fortran;hdf5_openmpi' -DHdf5_LIBRARIES='/usr/lib/x86_64-linux-gnu/libhdf5_openmpi_fortran.so;/usr/lib/x86_64-linux-gnu/libhdf5_openmpi.so' -DHdf5_STLIBS='/usr/lib/x86_64-linux-gnu/libhdf5_openmpi_fortran.a;/usr/lib/x86_64-linux-gnu/libhdf5_openmpi.a' /path/to/Puffin
     ```
 
+## Using Puffin with Docker
 
+Docker images are hosted [here](https://hub.docker.com/u/mightylorenzo/). There are currently 2 images being hosted - a 'full' container intended for development purposes, which has all tests built, along with the testing infrastructure (pFUnit) and developer and user documentation, etc. By default, it runs the unit tests in Puffin. The other, the 'user' container, is run like an executable, and is about half the size of the 'test' image, since it does not include the tests etc. By default, you pass it the number of processors you want to use, and the name of the input file in the current directory to run.
+
+## Puffin-test container
+
+Contains all tests and testing infrastructure, and builds all dev documentation.
+Can be built from the dev branch in Puffin.
+
+To download (don't need the 'sudo' on Windows):
+
+```
+sudo docker pull mightylorenzo/puffin-test
+```
+
+To run, do (don't need the 'sudo' on Windows):
+```
+sudo docker run -it -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin-user /bin/bash
+```
+...which will open a shell in the container interactively, mounting the current directory on the host to the /home/puffin_user/tmp/puffin-test directory in the container. 
+
+## Puffin-user container
+
+More lightweight, no tests or documentation built, intended more as an
+executable. The dockerfile to build it is in the dev-user branch.
+
+To download (don't need the 'sudo' on Windows):
+```
+sudo docker pull mightylorenzo/puffin-user
+```
+
+To run, do (don't need the 'sudo' on Windows):
+```
+sudo docker run -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin-user 2 clara.in
+```
+which will run on 2 processes, and pass the file in the current directory 'clara.in' to Puffin.
+
+
+### Building the image from source:
+
+Just do the standard Docker build command:
+
+```
+docker build -t mightylorenzo/puffin-test /path/to/puffin/
+```
