@@ -8,6 +8,8 @@ Puffin is written in modern fortran, and the post-processing scripts are in Pyth
 
 The below guide is for use on linux using the bash terminal. Installation on native Windows or OS X is not currently supported. (Installation on OS X with MacPorts using the below general instructions has been achieved, however, and similarly with Cygwin on Windows 7. The Ubuntu instructions below have been successfully run on Ubuntu for Windows on Windows 10)
 
+Specific instructions for building on Jureca are [here](BUILD-jureca.md).
+
 ### General Instructions
 
 To build Puffin you will need parallel hdf5 and fftw3 libs already installed. If you're installing on a system with different compilers, you'll need to make sure these libraries are built with the same build chain as you're going to use for Puffin. If you wish, fftw3 and hdf5 may be obtained and built using Bilder (see later in this guide).
