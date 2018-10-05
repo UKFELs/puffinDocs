@@ -1,6 +1,6 @@
 # Puffin Documentation
 
-Welcome to the documentation for Puffin! Puffin (Parallel Unaveraged Fel INtegrator) is a massively parallel 3D numerical solver for a Free Electron Laser (FEL). Puffin can be found on Github [here](https://github.com/UKFELs/Puffin).
+Welcome to the documentation for Puffin! Puffin is a massively parallel 3D numerical solver for a Free Electron Laser (FEL). Puffin can be found on Github [here](https://github.com/UKFELs/Puffin).
 
 ## Motivation
 
