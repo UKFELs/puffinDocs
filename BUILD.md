@@ -1,6 +1,6 @@
 # How to Install
 
-The source code is hosted [here](https://github.com/UKFELs/Puffin), along with binaries for Ubuntu 16.04 in the releases section. Containers are now also being hosted [here](https://hub.docker.com/u/mightylorenzo/).
+The source code is hosted [here](https://github.com/UKFELs/Puffin), along with binaries for Ubuntu 16.04 in the releases section. Docker container images are now also being hosted [here](https://hub.docker.com/u/mightylorenzo/).
 
 ## Building from source
 
