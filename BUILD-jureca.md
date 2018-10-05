@@ -21,8 +21,6 @@ export FC=mpif90
 export MPICC=mpicc
 export MPICXX=mpicxx
 export MPIF90=mpif90
-export CXX=mpicxx
-export CC=mpicc
 export MPI_CXX=mpicxx
 ```
 
