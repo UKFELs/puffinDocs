@@ -29,5 +29,12 @@ mpirun -np 2 puffin main.in
 
 which will launch Puffin on 2 MPI processes.
 
+## Running the 'Puffin-user' container image
+
+If using the 'user' Docker container image (see [here](BUILD.md)), then doing 
+```
+docker run -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin-user 2 clara.in
+```
+in a terminal will grab the image, and spin up a container, running Puffin on 2 processes, using the main input file `clara.in`. The input deck as described above should be in the current directory on the host - it will then be copied into the container, and when it is finished, the output files will be present in the current directory on the host.
 
 ## Viewing results
