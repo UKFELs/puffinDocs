@@ -43,6 +43,6 @@ There is also a [pdf manual on the Github repo](https://github.com/UKFELs/Puffin
 
 ## Development
 
-Puffin was developed by Lawrence Campbell at the University of Strathclyde, with valuable contributions from Jonny Smith (Tech-X), Piotr Traczykowski and Cynthia Nam (University of Strathclyde). Puffin was originally reported [here](http://aip.scitation.org/doi/10.1063/1.4752743), and has undergone many improvements and extended its functionality significantly since then. It no longer uses an external linear solver package, and the only external packages now required are FFTW (version 3.3 onwards), and parallel HDF5 libraries. An updated, but incomplete, description was published [here](http://ipac2018.vrws.de/papers/thpmk112.pdf)
+Puffin was developed by the group of Brian McNeil at the University of Strathclyde, principally authored by Lawrence Campbell, Pamela Johnston (nee Aitken), Cynthia Nam, Jonny Smith (Tech-X), and Piotr Traczykowski. Puffin was originally reported [here](http://aip.scitation.org/doi/10.1063/1.4752743), and has undergone many improvements and extended its functionality significantly since then. It no longer uses an external linear solver package, and the only external packages now required are FFTW (version 3.3 onwards), and parallel HDF5 libraries. An updated, but incomplete, description was published [here](http://ipac2018.vrws.de/papers/thpmk112.pdf)
 
 Please note Puffin is currently under active development (including this documentation). An 'official' release will be tagged soon.
