@@ -246,7 +246,7 @@ sudo docker pull mightylorenzo/puffin-test
 
 To run, do (don't need the 'sudo' on Windows):
 ```
-sudo docker run -it -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin-user /bin/bash
+sudo docker run -it -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin-test /bin/bash
 ```
 ...which will open a shell in the container interactively, mounting the current directory on the host to the /home/puffin_user/tmp/puffin-test directory in the container.
 
