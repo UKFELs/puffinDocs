@@ -6,7 +6,7 @@ The direction of travel of the electron beam and radiation field is along the $$
 
 ## To scale or not to scale?
 
-Although the Puffin algorithm uses scaled variables, the beam and radiation field parameters may be input in either SI units or the scaled units. Use the variable {\bf qscaled} in the main input file to specify whether scaled or SI units are being used. If $$=$$ {\bf .true.}, then Puffin expects scaled variables are being used. % If SI units are used, then the input parameters will be scaled according automatically to the scaling values specified in the main input file.
+Although the Puffin algorithm uses scaled variables, the beam and radiation field parameters may be input in either SI units or the scaled units. Use the variable **qscaled** in the main input file to specify whether scaled or SI units are being used. If **qscaled** $$=$$ **.true.**, then Puffin expects scaled variables are being used. % If SI units are used, then the input parameters will be scaled according automatically to the scaling values specified in the main input file.
 
 The main algorithm in Puffin utilizes the scaled variables above to make the numbers 'nicer' to work with. The system saturates with scaled intensity $$ \sim 1 $$, the scaled perpendicular momentum of the beam in the wiggler oscillates between $$-1$$ and $$1$$, and so forth. The distance through the wiggler is given in units of a (1D) gain length, and the beam coordinate in the radiation frame is in units of the cooperation length $$l_c$$, so that a reference electron slips one $$l_c$$ through the radiation field in one gain length. The scaling defines a frame of reference which normalises the quantities not only to numerically more manageable numbers, but to *characteristic* variables.
 
