@@ -1,3 +1,5 @@
+{% include lib/mathjax.html %}
+
 # 3D Magnetic Fields
 
 ## Main Undulator Models
@@ -36,7 +38,7 @@ where $\bar{k}_{x,y}$ describe the hyperbolic variation in the transverse direct
 $$
 \bar{k}_x^2 + \bar{k}_y^2 = \frac{\eta}{4 \rho^2}
 $$
-to be physically valid. They determine the focusing strength in the $\bar{x}$ and $\bar{y}$ dimensions. For the case of equal focusing, then,
+to be physically valid. They determine the focusing strength in the $$\bar{x}$$ and $$\bar{y}$$ dimensions. For the case of equal focusing, then,
 $$
 \bar{k}_{\beta n x} = \bar{k}_{\beta n y} = \frac{a_w }{ 4 \rho \gamma_0}.
 $$
