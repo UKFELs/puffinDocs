@@ -19,26 +19,34 @@ The undulators also include entry and exit tapers, and they may be switched on o
 ## Natural Undulator Focusing
 
 Each undulator type has an associated natural focusing wavenumber. In the helical case, the natural betatron wavenumber is
+
 $$
 \bar{k}_{\beta n x} = \bar{k}_{\beta n y} = \frac{a_w}{2 \sqrt{2} \rho \gamma_0},
 $$
+
 with $$\gamma_0$$ being the average energy of the electron beam (and not necessarily = $$\gamma_r$$, which only sets the scaling of the system.)
 
 In the planar case,
+
 $$
 \bar{k}_{\beta n y} = 0, \\
 \bar{k}_{\beta n y} = \frac{a_w}{2 \sqrt{2} \rho \gamma_0}.
 $$
 
 In the canted pole case,
+
 $$
 \bar{k}_{\beta n x,y} = \frac{a_w \bar{k}_{x,y}}{\sqrt{2 \eta} \gamma_0},
 $$
+
 where $\bar{k}_{x,y}$ describe the hyperbolic variation in the transverse directions (see eqns (\ref{cp1} - \ref{cp3})), and must obey
+
 $$
 \bar{k}_x^2 + \bar{k}_y^2 = \frac{\eta}{4 \rho^2}
 $$
+
 to be physically valid. They determine the focusing strength in the $$\bar{x}$$ and $$\bar{y}$$ dimensions. For the case of equal focusing, then,
+
 $$
 \bar{k}_{\beta n x} = \bar{k}_{\beta n y} = \frac{a_w }{ 4 \rho \gamma_0}.
 $$
@@ -48,6 +56,7 @@ $$
 ## Strong Beam Focusing
 
 In addition to the natural focusing channel, a constant, 'strong' focussing channel may be utilized, to focus the beam to a smaller transverse area. This is a magnetic field super-imposed upon the wiggler. It may be switched on or off with the flag **qFocussing** in the main input file, and is specified through the use of the variables **sKBetaXSF** and **sKBetaYSF**. It is probably highly artificial - it may be thought of as physically similar to an ion channel. Nevertheless it allows one to obtain strong focusing without using a lattice. It is defined very simply as
+
 $$
 b_x = \sqrt{\eta} \frac{\bar{k}_{\beta y}^2}{\kappa}\bar{y}_j, \\
 b_y = - \sqrt{\eta} \frac{\bar{k}_{\beta x}^2}{\kappa}\bar{x}_j
