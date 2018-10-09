@@ -39,7 +39,7 @@ $$
 \bar{k}_{\beta n x,y} = \frac{a_w \bar{k}_{x,y}}{\sqrt{2 \eta} \gamma_0},
 $$
 
-where $\bar{k}_{x,y}$ describe the hyperbolic variation in the transverse directions (see eqns (\ref{cp1} - \ref{cp3})), and must obey
+where $\bar{k}_{x,y}$ describe the hyperbolic variation in the transverse directions, and must obey
 
 $$
 \bar{k}_x^2 + \bar{k}_y^2 = \frac{\eta}{4 \rho^2}
@@ -64,4 +64,4 @@ $$
 
 If either **sKBetaXSF** or **sKBetaYSF** are not specified, then no focusing channel will be added for that dimension, even if the **qFocussing** flag is true.
 
-Magnetic quads between modules can be specified [in the lattice file](sections/latticeelements.md).
+Magnetic quads between modules can be specified [in the lattice file](latticeelements.md).
