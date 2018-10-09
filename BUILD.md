@@ -238,15 +238,15 @@ Docker images are hosted [here](https://hub.docker.com/u/mightylorenzo/). There 
 
 Contains all tests and testing infrastructure, and builds all dev documentation. Can be built from the dev branch in Puffin.
 
-To download (don't need the 'sudo' on Windows):
+To download:
 
 ```
-sudo docker pull mightylorenzo/puffin-test
+docker pull mightylorenzo/puffin-test
 ```
 
-To run, do (don't need the 'sudo' on Windows):
+To run, do:
 ```
-sudo docker run -it -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin-user /bin/bash
+docker run -it -v $(pwd):/home/puffin_user/project mightylorenzo/puffin-test /bin/bash
 ```
 ...which will open a shell in the container interactively, mounting the current directory on the host to the /home/puffin_user/tmp/puffin-test directory in the container.
 
@@ -254,14 +254,14 @@ sudo docker run -it -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/pu
 
 More lightweight, no tests or documentation built, intended more as an executable. The dockerfile to build it is in the dev-user branch.
 
-To download (don't need the 'sudo' on Windows):
+To download:
 ```
-sudo docker pull mightylorenzo/puffin-user
+docker pull mightylorenzo/puffin-user
 ```
 
-To run, do (don't need the 'sudo' on Windows):
+To run, do:
 ```
-sudo docker run -v $(pwd):/home/puffin_user/tmp/puffin-test mightylorenzo/puffin-user 2 clara.in
+docker run -v $(pwd):/home/puffin_user/project mightylorenzo/puffin-user 2 clara.in
 ```
 which will run on 2 processes, and pass the file in the current directory 'clara.in' to Puffin.
 
