@@ -268,7 +268,7 @@ which will run on 2 processes, and pass the file in the current directory 'clara
 
 ### Building the Puffin Docker image from source:
 
-Just do the standard Docker build command:
+If you want, you can build the Docker image locally yourself from source, rather than pulling it from Dockerhub. Just do the standard Docker build command:
 
 ```
 docker build -t mightylorenzo/puffin-test /path/to/puffin/
