@@ -24,7 +24,7 @@ $$
 
 where $$\bar{F}_{x,y} = \dfrac{F_{x,y}}{l_g}$$.
 
-In $$$x$$$ (unscaled) focal length is taken as
+In $$x$$ (unscaled) focal length is taken as
 
 $$
 \frac{1}{F_x} = \frac{g L_Q}{B\rho},
