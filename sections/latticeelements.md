@@ -35,6 +35,11 @@ UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
 
 Identifier: **QU**
 
+Example line
+```
+QU 2.39 -2.39
+```
+
 For the quad, we must specify $$\bar{F}_x$$ and $$\bar{F}_y$$. These are scaled transverse components of the transform matrix for the quad. The quad is only a point transform, currently, and does not have a length, so the length must be included in a drift section. The transforms for the quad, in S.I. units, are defined as
 
 $$
