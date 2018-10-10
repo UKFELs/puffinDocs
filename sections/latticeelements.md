@@ -2,7 +2,34 @@
 
 # Lattice elements
 
-Common lattice elements employed on the undulator line to focus or delay the beam are currently included as point transforms only. They are specified in the lattice file by their 2 letter identifier, followed by their required parameters.
+Using the main input file, one can define a single undulator to simulate in Puffin. However, the undulator line in a modern FEL is usually composed of several undulator modules, interspersed with beam optical elements such as focusing quadrupoles and delays or phase shifters. To simulate this, a lattice file can be supplied which describes the layout of the modules and other elements. If it is supplied, the single undulator described in the main input file is ignored.
+
+All common lattice elements except from the undulators employed on the undulator line to focus or delay the beam are currently included as point transforms only. They are specified in the lattice file by their 2 letter identifier, followed by their required parameters.
+
+Elements should be listed sequentially in the order they are placed in the beam line. An example layout is given below:
+
+'''
+UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
+DR 1.6455
+CH  0.0  0.966  0.0 
+QU 2.39 -2.39
+UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
+DR 1.6455
+CH  0.0  0.966  0.0 
+QU -2.39 2.39
+UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
+'''
+
+which will give an undulator, followed by a free-space drift, then a quadrupole, then an undulator, *etc.* The elements, their 2 letter ID's, and description of following parameters are given below.
+
+## Undulator
+
+Identifier: **UN**
+
+Example line
+'''
+UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
+'''
 
 ## Quadrupole
 
