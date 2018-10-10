@@ -56,6 +56,6 @@ For the drift, one must specify length in units of the number of undulator perio
 
 Identifier: **MO**
 
-For the modulation section, one may add an energy modulation to the beam specified by $\bar{k}_M = \dfrac{2 \pi}{\bar{\lambda}_M}$ and $\dfrac{\Delta \gamma}{\gamma_r}$.
+For the modulation section, one may add an energy modulation to the beam specified by $$\bar{k}_M = \dfrac{2 \pi}{\bar{\lambda}_M}$$ and $$\dfrac{\Delta \gamma}{\gamma_r}$$.
 
 
