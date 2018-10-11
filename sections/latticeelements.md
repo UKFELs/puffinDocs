@@ -20,7 +20,7 @@ QU -2.39 2.39
 UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
 ```
 
-which will give an undulator, followed by a free-space drift, then a quadrupole, then an undulator, *etc.* The elements, their 2 letter ID's, and description of following parameters are given below.
+which will give an undulator (indicated by `UN`), followed by a free-space drift (`DR`), followed by a chicane (`CH`), then a quadrupole (`QU`), then an undulator, *etc.* The elements, their 2 letter ID's, and description of following parameters are given below.
 
 ## Undulator
 
@@ -30,6 +30,10 @@ Example line
 ```
 UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
 ```
+
+with parameters after the ID corresponding to, in order
+
+ - undulator type, with choice of `'planepole', 'helical', 'curved'`, 
 
 ## Quadrupole
 
@@ -68,7 +72,7 @@ where $$g$$ is the quad magnetic field gradient in $$Tm^{-1}$$, $$L_Q$$ is the l
 
 Identifier: **CH**
 
-For the chicane, one must specify physical length, slippage length, and dispersion enhancement (scaled $$R_{56}$$). The length is the physical length of the device in undulator periods, and is used to calculate the diffraction properly. The slippage length tells how many wavelengths to delay the beam by relative to the radiation field in resonant radiation wavelengths - be careful, this should not be $$\leq 0$$, or the beam will then be faster than light speed! Similarly, it is left up to the user to decide what is appropriate to delay the beam by with respect to the physical length of the device. The dispersive enhancement, $$D$$, is the scaled R56 of the device - using $$\gamma_r$$ in the main input as the mean $$\gamma$$ for the chicane, so that
+For the chicane, one must specify physical length, slippage length, and dispersion enhancement (scaled $$R_{56}$$). The length is the physical length of the device in undulator periods, and is used to calculate the diffraction properly. The slippage length tells how many wavelengths to delay the beam by relative to the radiation field in resonant radiation wavelengths - be careful, this should not be $$\leq 0$$, or the beam will then be faster than light speed! Similarly, it is left up to the user to decide what is appropriate to delay the beam by with respect to the physical length of the device. The dispersive enhancement, $$D$$, is the scaled $$R_{56}$$ of the device - using $$\gamma_r$$ in the main input as the mean $$\gamma$$ for the chicane, so that
 
 $$
 \bar{z}_{2} = \bar{z}_{20} - 2D \left( \frac{\gamma - \gamma_r}{\gamma_r}  \right),
@@ -76,7 +80,7 @@ $$
 
 and $$D = k_r \rho  R_{56}$$.
 
-This approach of being able to vary the 3 parameters above is quite flexible, but at the expense of easy automatic checking of the physical relevance of the parameters. For example, one can disperse the beam 'in place', without shifting it w.r.t. the resonant wavelength, which is obviously unphysical. However, this may be useful for a quick setup of the beam for EEHG at the beginning of the undulator, for instance. If one is not sure of the physical length of the actual device, but knows the length between modules and the desired slippage (e.g. for mode locking the FEL), then one can specify the spatial drift between modules using a drift section, and then specify a chicane with zero physical length, but with the desired delay and $R_{56}$. In this way the radiation diffraction will still be modelled correctly.
+This approach of being able to vary the 3 parameters above is quite flexible, but at the expense of easy automatic checking of the physical relevance of the parameters. For example, one can disperse the beam 'in place', without shifting it w.r.t. the resonant wavelength, which is obviously unphysical. However, this may be useful for a quick setup of the beam for EEHG at the beginning of the undulator, for instance. If one is not sure of the physical length of the actual device, but knows the length between modules and the desired slippage (e.g. for mode locking the FEL), then one can specify the spatial drift between modules using a drift section, and then specify a chicane with zero physical length, but with the desired delay and $$R_{56}$$. In this way the radiation diffraction will still be modelled correctly.
 
 ## Drift
 
