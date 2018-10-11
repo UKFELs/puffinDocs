@@ -31,9 +31,18 @@ Example line
 UN  'planepole'  29   1.0   0.0   30   1.0   1.0   0.0    0.0
 ```
 
-with parameters after the ID corresponding to, in order
+with parameters after the ID corresponding to, in order:
 
- - undulator type, with choice of `'planepole', 'helical', 'curved'`, 
+ - undulator type, with choice of `'planepole', 'helical', 'curved'`, and `''` (blank - indicating variable polarization)
+ - The number of undulator periods $$N_u$$
+ - The tuning of the undulator parameter $$\alpha = a_u / a_{u0}$$, where $$a_{u0}$$ is the 'reference' tuning in the main input file (the undulator period cannot be varied, so this is really the ratio of magnetic field strengths)
+ - The undulator taper (linear) - $$d\alpha / d \bar{z}$$
+ - The number of integration steps to use per undulator period
+ - The relative size of the undulator $$x$$-polarised field strength $$u_x$$ (between $$0$$ and $$1$$) (ignored/overwritten if not using the variably polarized undulator)
+ - The relative size of the undulator $$y$$-polarised field strength $$u_y$$ (between $$0$$ and $$1$$) (ignored/overwritten if not using the variably polarized undulator)
+ - The strong in-undulator focusing wavenumber $$\bar{k}_{\beta SF x}$$
+ - The strong in-undulator focusing wavenumber $$\bar{k}_{\beta SF y}$$
+
 
 ## Quadrupole
 
