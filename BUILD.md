@@ -269,5 +269,5 @@ which will run on 2 processes, and pass the file in the current directory 'clara
 If you want, you can build the Docker image locally yourself from source, rather than pulling it from Dockerhub. Just do the standard Docker build command:
 
 ```
-docker build -t mightylorenzo/puffin-test /path/to/puffin/
+docker build -t imagename /path/to/puffin/
 ```
