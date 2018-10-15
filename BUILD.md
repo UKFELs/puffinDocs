@@ -6,7 +6,7 @@ The source code is hosted [here](https://github.com/UKFELs/Puffin), along with b
 
 Puffin is written in modern fortran, and the post-processing scripts are in Python, using pytables and numpy. Puffin can be built using CMake, and uses SciMake (bundled with Puffin) to find and link the external libraries.
 
-The below guide is for use on linux using the bash terminal. Installation on native Windows or OS X is not currently supported. (Installation on OS X with MacPorts using the below general instructions has been achieved, however, and similarly with Cygwin on Windows 7. The Ubuntu instructions below have been successfully run on Ubuntu for Windows on Windows 10)
+The below guide is for use on linux using the bash terminal. Installation on native Windows or OS X is not currently supported. Installation on OS X with MacPorts using the below general instructions has been achieved, however, and similarly with Cygwin on Windows 7. The Ubuntu instructions below have been successfully run on Ubuntu for Windows on Windows 10. As noted above, Docker images for running containers are now available [here](https://hub.docker.com/u/mightylorenzo/), which are the best way to get quickly up and running on a local machine with Windows or Mac OS X.
 
 Specific instructions for building on Jureca are [here](BUILD-jureca.md).
 
