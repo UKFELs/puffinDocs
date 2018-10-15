@@ -1,3 +1,9 @@
+---
+sidebar:
+  title: "Sample Title"
+  nav: sidebar-sample
+---
+
 # How to Install
 
 The source code is hosted [here](https://github.com/UKFELs/Puffin), along with binaries for Ubuntu 16.04 in the releases section. Docker container images are now being hosted [here](https://hub.docker.com/u/mightylorenzo/).
