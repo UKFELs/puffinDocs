@@ -12,9 +12,12 @@ All of the undulator fields have an associated natural focusing channel, which a
 
 ## Undulator Ends
 
-The undulators also include entry and exit tapers, and they may be switched on or off in the input file with the flag **qUndEnds**. Setting this to true will model a smooth taper up and down of the undulator magnetic fields in the first and last 2 periods of the undulator, taking the form of a $$\cos^2$$. If they are switched off, the beam is artificially initialized with an expected initial condition in the transverse coordinates for that undulator. Including these ends will model a more realistic and natural entry and exit from the undulator, and will reduce CSE effects from the shape of the wiggler.
+The undulators also include entry and exit tapers, and they may be switched on or off in the input file with the flag **qUndEnds**. Setting this to true will model a smooth tapering up and down of the undulator magnetic fields in the first and last 2 periods of the undulator. If they are switched off, the beam is artificially initialized with an expected initial condition in the transverse coordinates for that undulator. Including these ends will model a more realistic and natural entry and exit from the undulator, and will reduce CSE effects from the shape of the wiggler.
 
+![Alt Text](../pics/bx-field.png "Entrance taper for x-polarized field.")
+![Alt Text](../pics/by-field.png "Entrance taper for y-polarized field.")
 
+The $$x$$ field envelope increases more rapidly so that the first pole is at full strength. The $x$ field is symmetric, and the $$y$$ field is antisymmetric. The ends of the $$x$$ field shift the beam off-center by a small amount in the $$y$$ plane. The $$x$$ plane motion is not off-set by the $$y$$ field. Neither causes a velocity offset (or spatial drift) along the undulator. Note that the symmetry of the $x$ field technically results in an extra half-period of full-strength field oscillation in that direction.
 
 ## Natural Undulator Focusing
 
