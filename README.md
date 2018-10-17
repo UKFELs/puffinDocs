@@ -36,7 +36,11 @@ Puffin is written in modern Fortran, using MPI and OpenMP. It scales well up to 
 This documentation consists of the following sections:
 
 - [How to Install](BUILD.md)
+  - [JURECA build notes](BUILD-jureca.md)
 - [How to run](howtorun.md)
+  - [Lattice file](sections/latticeelements.md)
+  - [Undulator fields](sections/undulatorfields.md)
+  - [Puffin system of equations](sections/equations.md)
 - [Code Overview](overview.md)
 
 There is also a [pdf manual on the Github repo](https://github.com/UKFELs/Puffin/blob/master/doc/manual.pdf).
