@@ -17,6 +17,7 @@ All of the undulator fields have an associated natural focusing channel, which a
 The analytic description of the undulator fields are based on those discussed in \cite{scharlemann1}, which in the scaled notation here are:-
 
 **helical**
+
 $$
 b_x  = \cos({\bar{z}/2\rho}) \\
 b_y =  \sin({\bar{z}/2\rho}) \\
@@ -25,6 +26,7 @@ $$
 
 
 **plane-pole**
+
 $$
 b_x = 0 \\
 b_y =  \cosh((\sqrt{\eta}/{2\rho}) \bar{y}) \sin({\bar{z}/2\rho}) \\
@@ -35,6 +37,7 @@ $$
 
 
 **canted-pole**
+
 $$
 b_x =  \frac{\bar{k}_{\beta x}}{\bar{k}_{\beta y}}  \sinh(\bar{k}_{\beta x} \bar{x} )  \sinh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \\
 b_y = \cosh(\bar{k}_{\beta x} \bar{x} )  \cosh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \\
@@ -43,6 +46,7 @@ $$
 
 
 **variably polarized elliptical**
+
 $$
 b_x = u_x \cos({\bar{z}/2\rho}) \\
 b_y =  u_y \sin({\bar{z}/2\rho}) \\
