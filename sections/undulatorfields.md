@@ -36,9 +36,9 @@ $$
 
 **canted-pole**
 $$
-b_x =  \frac{\bar{k}_{\beta x}}{\bar{k}_{\beta y}}  \sinh(\bar{k}_{\beta x} \bar{x} )  \sinh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \label{cp1} \\
-b_y = \cosh(\bar{k}_{\beta x} \bar{x} )  \cosh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \label{cp2}\\
-b_z = \frac{\sqrt{\eta}}{2\rho \bar{k}_{\beta x}}     \cosh(\bar{k}_{\beta x} \bar{x} )    \sinh(   \bar{k}_{\beta y} \bar{y}    )    \cos({\bar{z}/2\rho}) \label{cp3}
+b_x =  \frac{\bar{k}_{\beta x}}{\bar{k}_{\beta y}}  \sinh(\bar{k}_{\beta x} \bar{x} )  \sinh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \\
+b_y = \cosh(\bar{k}_{\beta x} \bar{x} )  \cosh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \\
+b_z = \frac{\sqrt{\eta}}{2\rho \bar{k}_{\beta x}}     \cosh(\bar{k}_{\beta x} \bar{x} )    \sinh(   \bar{k}_{\beta y} \bar{y}    )    \cos({\bar{z}/2\rho})
 $$
 
 
