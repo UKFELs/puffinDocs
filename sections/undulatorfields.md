@@ -12,7 +12,7 @@ All of the undulator fields have an associated natural focusing channel, which a
 
 
 
-\subsection{Full Magnetic Undulator Field Analytic Description}
+## Full Magnetic Undulator Field Analytic Description
 
 The analytic description of the undulator fields are based on those discussed in \cite{scharlemann1}, which in the scaled notation here are:-
 
