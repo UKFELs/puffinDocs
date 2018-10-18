@@ -10,6 +10,52 @@ Available options for use in Puffin are **'helical'**, **'planepole'** - corresp
 
 All of the undulator fields have an associated natural focusing channel, which arises from from the off-axis variation in the magnetic fields. This motion arises naturally when numerically solving the equations, and is not super-imposed artificially upon the electron motion.
 
+
+
+\subsection{Full Magnetic Undulator Field Analytic Description}
+
+The analytic description of the undulator fields are based on those discussed in \cite{scharlemann1}, which in the scaled notation here are:-
+
+**helical**
+$$
+b_x  = \cos({\bar{z}/2\rho}) \\
+b_y =  \sin({\bar{z}/2\rho}) \\
+b_z = \frac{\sqrt{\eta}}{2\rho} (-\bar{x}\sin({\bar{z} / (2 \rho)}) + \bar{y}\cos({\bar{z} / (2 \rho)}))
+$$
+
+
+**plane-pole**
+$$
+b_x = 0 \\
+b_y =  \cosh((\sqrt{\eta}/{2\rho}) \bar{y}) \sin({\bar{z}/2\rho}) \\
+b_z =   \sinh((\sqrt{\eta}/{2\rho}) \bar{y}) \cos({\bar{z} / (2 \rho)}
+$$
+
+
+
+
+**canted-pole**
+$$
+b_x =  \frac{\bar{k}_{\beta x}}{\bar{k}_{\beta y}}  \sinh(\bar{k}_{\beta x} \bar{x} )  \sinh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \label{cp1} \\
+b_y = \cosh(\bar{k}_{\beta x} \bar{x} )  \cosh(   \bar{k}_{\beta y} \bar{y}    )   \sin({\bar{z}/2\rho}) \label{cp2}\\
+b_z = \frac{\sqrt{\eta}}{2\rho \bar{k}_{\beta x}}     \cosh(\bar{k}_{\beta x} \bar{x} )    \sinh(   \bar{k}_{\beta y} \bar{y}    )    \cos({\bar{z}/2\rho}) \label{cp3}
+$$
+
+
+**variably polarized elliptical**
+$$
+b_x = u_x \cos({\bar{z}/2\rho}) \\
+b_y =  u_y \sin({\bar{z}/2\rho}) \\
+b_z = \frac{\sqrt{\eta}}{2\rho} (u_x \bar{x}\sin({\bar{z} / (2 \rho)}) + u_y \bar{y}\cos({\bar{z} / (2 \rho)}))
+$$
+
+
+In the $$1$$D approximation, $$b_z = 0$$.
+
+All of the above have an associated *natural* focusing channel, which arises from from the off-axis variation in the magnetic fields. This motion arises naturally when numerically solving the equations, and is not super-imposed upon the electron motion.
+
+
+
 ## Undulator Ends
 
 The undulators also include entry and exit tapers, and they may be switched on or off in the input file with the flag **qUndEnds**. Setting this to true will model a smooth tapering up and down of the undulator magnetic fields in the first and last 2 periods of the undulator. If they are switched off, the beam is artificially initialized with an expected initial condition in the transverse coordinates for that undulator. Including these ends will model a more realistic and natural entry and exit from the undulator, and will reduce CSE effects from the shape of the wiggler.
