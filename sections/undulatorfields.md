@@ -14,7 +14,7 @@ All of the undulator fields have an associated natural focusing channel, which a
 
 ## Full Magnetic Undulator Field Analytic Description
 
-The analytic description of the undulator fields are based on those discussed in \cite{scharlemann1}, which in the scaled notation here are:-
+The analytic description of the undulator fields are described in more detail [here](http://accelconf.web.cern.ch/AccelConf/FEL2014/papers/tup022.pdf), which in the scaled Puffin notation are:-
 
 **helical**
 
