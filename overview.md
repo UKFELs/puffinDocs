@@ -13,6 +13,12 @@ The FEL equations which Puffin solves are in the radiation frame scaled to the F
 
 Puffin can be run in 1D or 3D mode. It is important to note that the approximations which Puffin is absent of in relation to other FEL codes are essentially '1D' approximations, meaning that in many cases fundamental deviations from 'usual' codes and theory can be shown in 1D.
 
+## Mesh setup
+
+![Alt Text](pics/long_mesh.png "Radiation mesh and propagating beam.")
+
+![Alt Text](pics/trans_mesh2.png "Setup of the radiation mesh and macroparticle beam in the transverse plane.")
+
 ## Temporal and Periodic Meshes
 
 ![Alt Text](pics/mpi_mesh4.png "Equivalent 2D representation of MPI memory distribution.")
@@ -20,7 +26,3 @@ Puffin can be run in 1D or 3D mode. It is important to note that the approximati
 ## Undulator Fields
 
 
-
-![Alt Text](pics/long_mesh.png "Radiation mesh and propagating beam.")
-
-![Alt Text](pics/trans_mesh2.png "Setup of the radiation mesh and macroparticle beam in the transverse plane.")
