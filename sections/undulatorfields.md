@@ -54,7 +54,7 @@ b_z = \frac{\sqrt{\eta}}{2\rho} (u_x \bar{x}\sin({\bar{z} / (2 \rho)}) + u_y \ba
 $$
 
 
-In the $$1$$D approximation, $$b_z = 0$$.
+In the 1D approximation, $$b_z = 0$$.
 
 All of the above have an associated *natural* focusing channel, which arises from from the off-axis variation in the magnetic fields. This motion arises naturally when numerically solving the equations, and is not super-imposed upon the electron motion.
 
