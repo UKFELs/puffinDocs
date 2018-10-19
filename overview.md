@@ -21,6 +21,6 @@ Puffin can be run in 1D or 3D mode. It is important to note that the approximati
 
 
 
-![Alt Text](../pics/long_mesh.png "Radiation mesh and propagating beam.")
+![Alt Text](pics/long_mesh.png "Radiation mesh and propagating beam.")
 
-![Alt Text](../pics/trans_mesh2.png "Setup of the radiation mesh and macroparticle beam in the transverse plane.")
+![Alt Text](pics/trans_mesh2.png "Setup of the radiation mesh and macroparticle beam in the transverse plane.")
