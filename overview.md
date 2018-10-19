@@ -21,6 +21,10 @@ Puffin can be run in 1D or 3D mode. It is important to note that the approximati
 
 ## Temporal and Periodic Meshes
 
+## Parallelism
+
+Puffin uses a slab decomposition of the mesh, which is augmented with 'shared' sections to enable synchronization over neighbouring processes. Since we are in the radiation frame, macroparticles will always move from left to right.
+
 ![Alt Text](pics/mpi_mesh4.png "Equivalent 2D representation of MPI memory distribution.")
 
 ## Undulator Fields
