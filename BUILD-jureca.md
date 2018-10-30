@@ -5,6 +5,7 @@ These instructions use the default Intel compilers and Intel MPI, and use the sy
 First, load the necessary modules:
 ```
 module load intel-para
+module load CMake
 module load FFTW/3.3.7
 module load HDF5/1.8.20
 ```
