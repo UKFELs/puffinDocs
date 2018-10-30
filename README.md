@@ -36,6 +36,7 @@ Puffin is written in modern Fortran, using MPI and OpenMP. It scales well up to 
 This documentation consists of the following sections:
 
 - [How to Install](BUILD.md)
+  - [JURECA build notes](BUILD-HartreeScafellPike.md)
   - [JURECA build notes](BUILD-jureca.md)
 - [How to run](howtorun.md)
   - [Lattice file](sections/latticeelements.md)
