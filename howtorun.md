@@ -21,7 +21,7 @@ Puffin comes with a few example input decks for reference.
 
 ## Running Puffin
 
-Once installed, Puffin must be invoked with MPI, passing it the main input file, here called main.in:
+Once installed, Puffin must be invoked with MPI, passing it the main input file, here called `main.in`:
 
 ```
 mpirun -np 2 puffin main.in
