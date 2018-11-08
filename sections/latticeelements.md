@@ -84,7 +84,7 @@ Identifier: **CH**
 For the chicane, one must specify physical length, slippage length, and dispersion enhancement (scaled $$R_{56}$$). The length is the physical length of the device in undulator periods, and is used to calculate the diffraction properly. The slippage length tells how many wavelengths to delay the beam by relative to the radiation field in resonant radiation wavelengths - be careful, this should not be $$\leq 0$$, or the beam will then be faster than light speed! Similarly, it is left up to the user to decide what is appropriate to delay the beam by with respect to the physical length of the device. The dispersive enhancement, $$D$$, is the scaled $$R_{56}$$ of the device - using $$\gamma_r$$ in the main input as the mean $$\gamma$$ for the chicane, so that
 
 $$
-\bar{z}_{2} = \bar{z}_{20} - 2D \left( \frac{\gamma - \gamma_r}{\gamma_r}  \right),
+\bar{z}_{2} = \bar{z}_{20} - 2D \left( \frac{\gamma - \gamma_r}{\gamma_r}  \right) + \bar{l}_{slip},
 $$
 
 and $$D = k_r \rho  R_{56}$$.
