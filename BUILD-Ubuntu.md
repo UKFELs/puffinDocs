@@ -27,6 +27,16 @@ make install
 
 for `HDF5`, in the root of its unzipped source.
 
+
+Fetch Puffin to <path to Puffin source root>. To clone from Github, do
+
+```
+git clone git@github.com:UKFELs/Puffin.git <path to Puffin source root>
+```
+
+where <path to Puffin source root> is where you want the top level of the Puffin source to be downloaded to.
+
+
 Then to build Puffin, we do the usual `CMake` and build commands (outlined [here](BUILD.md)):
 
 ```
