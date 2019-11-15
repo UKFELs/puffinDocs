@@ -5,6 +5,7 @@ The packages required by Ubuntu (and other Linux) include:
 - gfortran (gfortran)
 - OpenMPI (libopenmpi-dev, openmpi-bin - for Ubuntu, other distributions often use different package names)
 - Cmake (cmake)
+
 In general, you need to be able to issue commands like: `mpirun, mpicc, mpif90, cmake`. When trying to issue such command you should only see message that the source input file is missing but the command should execute.
 Some version of Ubuntu have precompiled `HDF5` nad `FFTW3` libraries. However, the libraries are often not fully compatibile with Puffin. The most general approach to build Puffin is to build first your own `HDF5` and `FFTW3` libraries. Whatever the reason, we must build our own versions of `FFTW3` and `HDF5`.
 
