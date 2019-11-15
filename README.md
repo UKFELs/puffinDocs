@@ -37,6 +37,7 @@ This documentation consists of the following sections:
 
 - [How to Install](BUILD.md)
   - [Scafell Pike @ Hartree build notes](BUILD-HartreeScafellPike.md)
+  - [Ubuntu](BUILD-Ubuntu.md)
   - [JURECA build notes](BUILD-jureca.md)
 - [How to run](howtorun.md)
   - [Lattice file](sections/latticeelements.md)
