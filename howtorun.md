@@ -40,9 +40,9 @@ in a terminal will grab the image, and spin up a container, running Puffin on 2 
 ## Common performance issue
 
 If you feel that Puffin is slow then one of the most common problem is that the code is hybrid OpenMP + MPI code. The easiest solution is to set proper environement variable in the system which blocks OpenMP:
-    ```
-    export OMP_NUM_THREADS=1
-    ```
+```
+export OMP_NUM_THREADS=1
+```
 This step is REQUIRED when using periodic (single slice) node and recommended on most of the machines.
 
 ## Viewing results
